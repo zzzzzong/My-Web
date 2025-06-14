@@ -4,31 +4,50 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { SmoothScroll } from "@/components/smooth-scroll"
+import { ActiveSectionObserver } from "@/components/active-section-observer"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SmoothScroll />
+      <ActiveSectionObserver />
       {/* Header */}
       <header className="sticky top-0 z-10 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center">
+        <div className="container flex h-14 items-center px-6 md:px-8">
           <div className="mr-4 hidden md:flex">
             <a className="mr-6 flex items-center space-x-2 font-bold" href="/">
               <span>Caius Yang </span>
             </a>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <a className="transition-colors hover:text-foreground/80" href="#about">
+              <a
+                className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
+                href="#about"
+              >
                 About
               </a>
-              <a className="transition-colors hover:text-foreground/80" href="#experience">
+              <a
+                className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
+                href="#experience"
+              >
                 Experience
               </a>
-              <a className="transition-colors hover:text-foreground/80" href="#education">
+              <a
+                className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
+                href="#education"
+              >
                 Education
               </a>
-              <a className="transition-colors hover:text-foreground/80" href="#skills">
+              <a
+                className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
+                href="#skills"
+              >
                 Skills
               </a>
-              <a className="transition-colors hover:text-foreground/80" href="#contact">
+              <a
+                className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
+                href="#contact"
+              >
                 Contact
               </a>
             </nav>
@@ -69,11 +88,11 @@ export default function Home() {
                   <p className="text-xl text-muted-foreground">Data Analyst & Junior Web Developer</p>
                 </div>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Passionate about creating efficient, user-friendly applications that solve real-world problems. With
-                  expertise in modern web technologies and a keen eye for design.
+                  Hi, I'm Caius! I work with data. I'm also really into investing in U.S. stocks, and I'm a big fan of
+                  milk tea. Want to learn more? Feel free to check out my website!
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button asChild>
+                  <Button variant="outline" asChild>
                     <a href="#contact">Contact Me</a>
                   </Button>
                   <Button variant="outline" asChild>
@@ -117,17 +136,16 @@ export default function Home() {
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Hobbies & Interests</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge>Photography</Badge>
-                    <Badge>Hiking</Badge>
+                    <Badge>Milk Tea</Badge>
+                    <Badge>Working out</Badge>
                     <Badge>Reading</Badge>
                     <Badge>Cooking</Badge>
-                    <Badge>Travel</Badge>
-                    <Badge>Chess</Badge>
+                    <Badge>investing</Badge>
                   </div>
                 </div>
               </div>
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/IMG_8953.png"
                 width={600}
                 height={400}
                 alt="About me"
@@ -351,8 +369,8 @@ export default function Home() {
                 <div className="grid gap-4">
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5" />
-                    <a href="mailto:john.doe@example.com" className="hover:underline">
-                      john.doe@example.com
+                    <a href="mailto:huazong1028@gmail.com" className="hover:underline">
+                      huazong1028@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
@@ -453,7 +471,7 @@ export default function Home() {
               href="https://github.com/johndoe"
               target="_blank"
               rel="noreferrer"
-              className="text-sm hover:underline underline-offset-4"
+              className="text-sm transition-colors duration-200 hover:text-foreground/70"
             >
               GitHub
             </a>
@@ -461,11 +479,14 @@ export default function Home() {
               href="https://linkedin.com/in/johndoe"
               target="_blank"
               rel="noreferrer"
-              className="text-sm hover:underline underline-offset-4"
+              className="text-sm transition-colors duration-200 hover:text-foreground/70"
             >
               LinkedIn
             </a>
-            <a href="mailto:john.doe@example.com" className="text-sm hover:underline underline-offset-4">
+            <a
+              href="mailto:john.doe@example.com"
+              className="text-sm transition-colors duration-200 hover:text-foreground/70"
+            >
               Email
             </a>
           </div>
