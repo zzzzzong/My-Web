@@ -6,20 +6,21 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { ActiveSectionObserver } from "@/components/active-section-observer"
+import { ContactForm } from "@/components/contact-form"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full">
       <SmoothScroll />
       <ActiveSectionObserver />
       {/* Header */}
       <header className="sticky top-0 z-10 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center px-6 md:px-8">
-          <div className="mr-4 hidden md:flex">
-            <a className="mr-6 flex items-center space-x-2 font-bold" href="/">
-              <span>Caius Yang </span>
+        <div className="w-full max-w-7xl mx-auto flex h-14 items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center">
+            <a className="flex items-center space-x-2 font-bold mr-8" href="/">
+              <span>Caius Yang</span>
             </a>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
+            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
               <a
                 className="transition-colors hover:text-foreground/80 relative py-1 px-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground/60 after:transition-all hover:after:w-full"
                 href="#about"
@@ -52,36 +53,34 @@ export default function Home() {
               </a>
             </nav>
           </div>
-          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
-              <Button variant="outline" size="icon" className="ml-auto hidden md:flex">
+          <div className="flex items-center space-x-2">
+            <Button variant="outline" size="icon" asChild>
+              <a href="#contact">
                 <Mail className="h-4 w-4" />
                 <span className="sr-only">Contact</span>
-              </Button>
-            </div>
-            <nav className="flex items-center">
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://github.com" target="_blank" rel="noreferrer">
-                  <Github className="h-4 w-4" />
-                  <span className="sr-only">GitHub</span>
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                  <Linkedin className="h-4 w-4" />
-                  <span className="sr-only">LinkedIn</span>
-                </a>
-              </Button>
-            </nav>
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://github.com" target="_blank" rel="noreferrer">
+                <Github className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </Button>
           </div>
         </div>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 w-full">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+        <section className="w-full py-4 md:py-8 lg:py-12 xl:py-16">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Caius Yang</h1>
@@ -100,22 +99,24 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <Image
-                src="/placeholder.svg?height=550&width=550"
-                width={550}
-                height={550}
-                alt="Profile"
-                className="mx-auto aspect-square overflow-hidden rounded-full object-cover border-4 border-border lg:order-last"
-                priority
-              />
+              <div className="flex justify-center lg:justify-end">
+                <Image
+                  src="/placeholder.svg?height=550&width=550"
+                  width={550}
+                  height={550}
+                  alt="Profile"
+                  className="aspect-square overflow-hidden rounded-full object-cover border-4 border-border max-w-[400px] w-full"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section id="about" className="w-full py-4 md:py-8 lg:py-12 bg-muted/40">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Me</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -123,7 +124,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+            <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Personal Information</h3>
@@ -140,25 +141,27 @@ export default function Home() {
                     <Badge>Working out</Badge>
                     <Badge>Reading</Badge>
                     <Badge>Cooking</Badge>
-                    <Badge>investing</Badge>
+                    <Badge>Investing</Badge>
                   </div>
                 </div>
               </div>
-              <Image
-                src="/IMG_8953.png"
-                width={600}
-                height={400}
-                alt="About me"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-              />
+              <div className="flex justify-center">
+                <Image
+                  src="/placeholder.svg?height=400&width=600"
+                  width={600}
+                  height={400}
+                  alt="About me"
+                  className="aspect-video overflow-hidden rounded-xl object-cover object-center max-w-full"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section id="experience" className="w-full py-4 md:py-8 lg:py-12">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Work Experience</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -166,7 +169,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-8 py-12">
+            <div className="grid gap-8 max-w-5xl mx-auto">
               <ExperienceCard
                 title="Senior Software Engineer"
                 company="Tech Solutions Inc."
@@ -193,9 +196,9 @@ export default function Home() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section id="education" className="w-full py-4 md:py-8 lg:py-12 bg-muted/40">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Education</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -203,7 +206,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-8 py-12">
+            <div className="grid gap-8 max-w-5xl mx-auto">
               <EducationCard
                 degree="Master of Science in Computer Science"
                 institution="Tech University"
@@ -258,9 +261,9 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section id="skills" className="w-full py-4 md:py-8 lg:py-12">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Skills</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -268,14 +271,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto max-w-5xl py-12">
+            <div className="max-w-5xl mx-auto">
               <Tabs defaultValue="technical" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="technical">Technical</TabsTrigger>
                   <TabsTrigger value="soft">Soft Skills</TabsTrigger>
                   <TabsTrigger value="tools">Tools & Software</TabsTrigger>
                 </TabsList>
-                <TabsContent value="technical" className="mt-6">
+                <TabsContent value="technical" className="mt-6 skills-tab-content">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     <SkillCard name="JavaScript" level="Expert" />
                     <SkillCard name="TypeScript" level="Advanced" />
@@ -288,7 +291,7 @@ export default function Home() {
                     <SkillCard name="Next.js" level="Advanced" />
                   </div>
                 </TabsContent>
-                <TabsContent value="soft" className="mt-6">
+                <TabsContent value="soft" className="mt-6 skills-tab-content">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     <SkillCard name="Communication" level="Expert" />
                     <SkillCard name="Team Leadership" level="Advanced" />
@@ -298,7 +301,7 @@ export default function Home() {
                     <SkillCard name="Critical Thinking" level="Advanced" />
                   </div>
                 </TabsContent>
-                <TabsContent value="tools" className="mt-6">
+                <TabsContent value="tools" className="mt-6 skills-tab-content">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     <SkillCard name="Git" level="Expert" />
                     <SkillCard name="VS Code" level="Expert" />
@@ -314,15 +317,15 @@ export default function Home() {
         </section>
 
         {/* Reviews Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section className="w-full py-4 md:py-8 lg:py-12 bg-muted/40">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Testimonials</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">What others say about working with me.</p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
               <ReviewCard
                 content="John is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills make him a valuable asset to any team."
                 author="Sarah Johnson"
@@ -348,9 +351,9 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section id="contact" className="w-full py-4 md:py-8 lg:py-12">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get In Touch</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -358,7 +361,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Contact Information</h3>
@@ -392,71 +395,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Send Me a Message</h3>
-                </div>
-                <form className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Name
-                      </label>
-                      <input
-                        id="name"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your email"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="subject"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Subject"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Your message"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </section>
@@ -464,7 +403,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full border-t py-6">
-        <div className="container flex flex-col items-center justify-center gap-4 px-4 md:px-6 md:flex-row md:justify-between">
+        <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 px-4 sm:px-6 lg:px-8 md:flex-row md:justify-between">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Caius Yang. All rights reserved.</p>
           <div className="flex gap-4">
             <a
@@ -484,7 +423,7 @@ export default function Home() {
               LinkedIn
             </a>
             <a
-              href="mailto:john.doe@example.com"
+              href="mailto:huazong1028@gmail.com"
               className="text-sm transition-colors duration-200 hover:text-foreground/70"
             >
               Email

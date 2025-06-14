@@ -21,9 +21,9 @@ export function SmoothScroll() {
           const header = document.querySelector("header")
           const headerHeight = header ? header.offsetHeight : 0
 
-          // Calculate position with offset
+          // Calculate position with offset - increased offset to show section titles at consistent position
           const elementPosition = targetElement.getBoundingClientRect().top
-          const offsetPosition = elementPosition + window.scrollY - headerHeight - 20 // Extra 20px padding
+          const offsetPosition = elementPosition + window.scrollY - headerHeight - 80 // Increased offset for consistent title positioning
 
           // Smooth scroll to the element
           window.scrollTo({

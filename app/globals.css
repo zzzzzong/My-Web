@@ -58,6 +58,13 @@
   }
   html {
     scroll-behavior: smooth;
+    /* Ensure consistent scrollbar behavior */
+    scrollbar-gutter: stable;
+  }
+  /* Perfect centering compensation */
+  .mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -69,5 +76,37 @@
 
   .active-section::after {
     width: 100%;
+  }
+
+  /* Skills tab content animations */
+  .skills-tab-content {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade out animation for tab content */
+  .skills-tab-content-exit {
+    animation: fadeOut 0.2s ease-in-out;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
   }
 }
