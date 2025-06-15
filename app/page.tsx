@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { ActiveSectionObserver } from "@/components/active-section-observer"
 import { ContactForm } from "@/components/contact-form"
+import { ImageGallery } from "@/components/image-gallery"
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <header className="sticky top-0 z-10 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="w-full max-w-7xl mx-auto flex h-14 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
-            <a className="flex items-center space-x-2 font-bold mr-8" href="/">
+            <a className="flex items-center space-x-2 font-bold mr-8" href="#hero">
               <span>Caius Yang</span>
             </a>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
@@ -78,13 +79,13 @@ export default function Home() {
 
       <main className="flex-1 w-full">
         {/* Hero Section */}
-        <section className="w-full py-4 md:py-8 lg:py-12 xl:py-16">
+        <section id="hero" className="w-full py-4 md:py-8 lg:py-12 xl:py-16">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Caius Yang</h1>
-                  <p className="text-xl text-muted-foreground">Data Analyst & Junior Web Developer</p>
+                  <p className="text-xl text-muted-foreground">Data Analyst & US stock investors</p>
                 </div>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   Hi, I'm Caius! I work with data. I'm also really into investing in U.S. stocks, and I'm a big fan of
@@ -101,11 +102,12 @@ export default function Home() {
               </div>
               <div className="flex justify-center lg:justify-end">
                 <Image
-                  src="/placeholder.svg?height=550&width=550"
+                  src="/images/profile.jpg"
                   width={550}
                   height={550}
-                  alt="Profile"
+                  alt="Caius Yang Profile"
                   className="aspect-square overflow-hidden rounded-full object-cover border-4 border-border max-w-[400px] w-full"
+                  style={{ objectPosition: "60% 30%" }}
                   priority
                 />
               </div>
@@ -129,30 +131,26 @@ export default function Home() {
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Personal Information</h3>
                   <p className="text-muted-foreground">
-                    I'm a software engineer with a passion for creating elegant solutions to complex problems. When I'm
-                    not coding, you can find me exploring new hiking trails, reading science fiction, or experimenting
-                    with new recipes in the kitchen.
+                    I'm all about doing my homework before I dive in. Finding patterns in numbers and turning those
+                    insights into real value? That's incredibly fulfilling and why I'm into the stock market and
+                    aspiring to be an analyst. I love challenging myself, making unfamiliar things my own – every
+                    breakthrough feels amazing! This website is a big leap out of my comfort zone, and it'll be a fun
+                    space to document my life and challenges.
                   </p>
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Hobbies & Interests</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge>Milk Tea</Badge>
+                    <Badge>Investing</Badge>
                     <Badge>Working out</Badge>
                     <Badge>Reading</Badge>
-                    <Badge>Cooking</Badge>
-                    <Badge>Investing</Badge>
+                    <Badge>Music</Badge>
+                    <Badge>Milk Tea</Badge>
                   </div>
                 </div>
               </div>
               <div className="flex justify-center">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  width={600}
-                  height={400}
-                  alt="About me"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center max-w-full"
-                />
+                <ImageGallery />
               </div>
             </div>
           </div>
@@ -280,9 +278,9 @@ export default function Home() {
                 </TabsList>
                 <TabsContent value="technical" className="mt-6 skills-tab-content">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    <SkillCard name="JavaScript" level="Expert" />
-                    <SkillCard name="TypeScript" level="Advanced" />
-                    <SkillCard name="React" level="Expert" />
+                    <SkillCard name="Python" level="Expert" />
+                    <SkillCard name="R" level="Expert" />
+                    <SkillCard name="Excel VbA" level="Advanced" />
                     <SkillCard name="Node.js" level="Advanced" />
                     <SkillCard name="HTML/CSS" level="Expert" />
                     <SkillCard name="SQL" level="Intermediate" />
@@ -298,17 +296,17 @@ export default function Home() {
                     <SkillCard name="Problem Solving" level="Expert" />
                     <SkillCard name="Time Management" level="Advanced" />
                     <SkillCard name="Adaptability" level="Expert" />
-                    <SkillCard name="Critical Thinking" level="Advanced" />
+                    <SkillCard name="Critical Thinking" level="Expert" />
                   </div>
                 </TabsContent>
                 <TabsContent value="tools" className="mt-6 skills-tab-content">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    <SkillCard name="Git" level="Expert" />
-                    <SkillCard name="VS Code" level="Expert" />
-                    <SkillCard name="Docker" level="Intermediate" />
-                    <SkillCard name="AWS" level="Advanced" />
-                    <SkillCard name="Figma" level="Intermediate" />
-                    <SkillCard name="JIRA" level="Advanced" />
+                    <SkillCard name="Spyder" level="Expert" />
+                    <SkillCard name="JupyterNotebook" level="Expert" />
+                    <SkillCard name="RStudio" level="Advanced" />
+                    <SkillCard name="Excel" level="Advanced" />
+                    <SkillCard name="MySQL" level="Advanced" />
+                    <SkillCard name="PowerBI" level="Intermediate" />
                   </div>
                 </TabsContent>
               </Tabs>
